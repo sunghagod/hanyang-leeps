@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한양립스 — Premium Living Redefined</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <canvas id="three-bg"></canvas>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo" id="loader-logo">한양립스</div>
+      <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+      <div class="loader-pct" id="loader-pct">Loading 0%</div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══ HERO: Full-screen image + huge text overlay ═══ -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="hero-bg.png" alt="한양립스 에듀포레 투시도" class="hero__bg-img">
+      </div>
+      <!-- Header -->
+      <header class="header">
+        <div class="header__logo"><img src="logo-hl.png" alt="한양립스 에듀포레" class="header__logo-img"></div>
+        <div class="header__menu">+ MENU</div>
+      </header>
+      <!-- Marquee -->
+      <div class="hero__marquee">
+        <div class="hero__marquee-track">
+          <span>프리미엄 주거의 새로운 기준 · Building premium living for the next generation&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+          <span>프리미엄 주거의 새로운 기준 · Building premium living for the next generation&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+          <span>프리미엄 주거의 새로운 기준 · Building premium living for the next generation&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        </div>
+      </div>
+      <!-- Big title -->
+      <div class="hero__title-wrap">
+        <div class="hero__brand">
+          <img src="logo-hl.png" alt="HL LEEPS" class="hero__brand-logo">
+        </div>
+        <h1 class="hero__title">PREMIUM<br>LIVING</h1>
+      </div>
+      <!-- Bottom row -->
+      <div class="hero__bottom">
+        <button class="hero__scroll">SCROLL</button>
+      </div>
+    </section>
+
+    <!-- ═══ INTRO ═══ -->
+    <section class="section intro">
+      <div class="section__label">
+        <span>분양개요</span>
+        <svg class="label-star" width="14" height="14" viewBox="0 0 14 14"><path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5Z" fill="currentColor"/></svg>
+      </div>
+      <p class="intro__text">광주 광산구 하산동, 서광산 스마트타운 첫 번째 프리미엄 아파트. 지하2층 · 지상 최고 25층 · 10개동 470세대, 전세대 남향 판상형 4Bay 설계. 주차 705대(세대당 1.5대). 2027년 11월 입주 예정.</p>
+    </section>
+
+    <!-- ═══ REEL / KEY VISUAL ═══ -->
+    <section class="section reel">
+      <div class="reel__media">
+        <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&h=700&fit=crop" alt="" class="reel__img">
+        <button class="reel__play">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" stroke="white" stroke-width="2"/><path d="M19 15L34 24L19 33Z" fill="white"/></svg>
+        </button>
+      </div>
+      <div class="reel__info">
+        <div class="section__label">
+          <span>한양립스 Spirit</span>
+          <svg class="label-star" width="14" height="14" viewBox="0 0 14 14"><path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5Z" fill="currentColor"/></svg>
+        </div>
+        <p class="reel__desc">25년도 주택사업 매출 2조 초과 달성, 상위권 건설사. 서광산 스마트 뉴타운 4개 단지 총 2천여 세대 대단지 개발의 첫 번째 프리미엄 아파트. 미래차 국가산단 · 빛그린산단 최대 수혜지역.</p>
+        <a href="#register" class="text-link">관심고객 등록 →</a>
+      </div>
+    </section>
+
+    <!-- ═══ BENEFITS — 특별혜택 / 페이백 (dark full-width) ═══ -->
+    <section class="promo">
+      <div class="promo__inner">
+        <span class="promo__badge">특별 분양 혜택</span>
+        <h2 class="promo__headline">총 <em>1억 이상</em> 할인 혜택<br>광주 유일 <em>34평대 3억대</em> 아파트</h2>
+        <p class="promo__sub">계약금 1,500만원이면 입주까지 끝!</p>
+
+        <div class="promo__cards">
+          <div class="promo-card">
+            <span class="promo-card__label">특별 계약조건</span>
+            <p class="promo-card__value">계약금 <strong class="accent">1,500만원</strong>으로<br>입주때까지 끝!</p>
+          </div>
+          <div class="promo-card">
+            <span class="promo-card__label">정부 기금대출</span>
+            <p class="promo-card__value">금리 <strong class="accent">1%대</strong><br>대출 가능</p>
+          </div>
+        </div>
+
+        <ul class="promo__tags">
+          <li>발코니 확장 무상</li>
+          <li>중도금 무이자</li>
+          <li>시스템 에어컨 4대 무상</li>
+          <li>현관 중문 무상</li>
+        </ul>
+
+        <a href="#register" class="promo__cta">지금 바로 상담받기</a>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES — Accent color section with massive text ═══ -->
+    <section class="section services">
+      <div class="services__info">
+        <div class="section__label section__label--light">
+          <span>커뮤니티 · 특화시스템</span>
+          <svg class="label-star" width="14" height="14" viewBox="0 0 14 14"><path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5Z" fill="currentColor"/></svg>
+        </div>
+        <p class="services__desc">331평 규모 스포츠존 — 호텔급 피트니스, 프라이빗 골프, GX룸(요가·필라테스), 프리미엄 샤워실 입주민 무료 제공. 단지 내 돌봄센터·어린이집, 1인 미디어 스튜디오 운영.</p>
+        <a href="#register" class="text-link text-link--light">자세히 보기 →</a>
+      </div>
+      <ul class="services__list">
+        <li>판상형 4Bay</li>
+        <li>스포츠존 331평</li>
+        <li>LEEPS 스마트홈</li>
+        <li>돌봄 · 어린이집</li>
+      </ul>
+    </section>
+
+    <!-- ═══ INTERIOR — 풀와이드 배너 이미지 ═══ -->
+    <section class="interior">
+      <img src="interior-banner.png" alt="Wellness — Therapeutic 인테리어" class="interior__img">
+    </section>
+
+    <!-- ═══ SELECTED — 평형 안내 (탭 + 상세) ═══ -->
+    <section class="sfp">
+      <div class="sfp-inner">
+        <div class="sfp-head">
+          <p class="sfp-label"><span class="sfp-label-line"></span>UNIT PLAN</p>
+          <h2>평형 안내 <span class="sfp-tap-hint">터치하세요!</span></h2>
+          <p class="sfp-sub">총 6개 타입 470세대 — 라이프스타일에 맞는 평형을 선택하세요</p>
+        </div>
+        <div class="sfp-tabs">
+          <button class="sfp-tab active" data-fptab="0">84A (37평)</button>
+          <button class="sfp-tab" data-fptab="1">84B (37평)</button>
+          <button class="sfp-tab" data-fptab="2">84C (39평)</button>
+          <button class="sfp-tab" data-fptab="3">84D (37평)</button>
+          <button class="sfp-tab" data-fptab="4">89A (38평)</button>
+          <button class="sfp-tab" data-fptab="5">89C (40평)</button>
+        </div>
+        <div class="sfp-body">
+          <!-- 84A -->
+          <div class="sfp-panel active" data-fppanel="0">
+            <div class="sfp-img"><img src="https://placehold.co/800x600/1a1a1a/666?text=84A+%ED%8F%89%EB%A9%B4%EB%8F%84" alt="84A 평면도" loading="lazy"></div>
+            <div class="sfp-info">
+              <h3>84A타입<span class="pyeong">(37평)</span></h3>
+              <p class="sfp-desc"><strong>전세대 남향</strong> 판상형 <strong>4Bay</strong> 설계로 우수한 채광과 통풍. 다양한 수납공간과 실용적인 동선 설계.</p>
+              <div class="sfp-specs">
+                <div class="sfp-spec"><span>전용면적</span><b>86.97㎡ (26.31평)</b></div>
+                <div class="sfp-spec"><span>공급면적</span><b>110.92㎡ (33.55평)</b></div>
+                <div class="sfp-spec"><span>서비스면적</span><b>38.49㎡ (11.64평)</b></div>
+                <div class="sfp-spec"><span>공급 세대</span><b><em>60</em> 세대</b></div>
+              </div>
+              <div class="sfp-features">
+                <span class="sfp-feat-label">특장점</span>
+                <div class="sfp-feat-list">
+                  <span class="sfp-feat">4Bay 판상형</span>
+                  <span class="sfp-feat">남향 배치</span>
+                  <span class="sfp-feat">LEEPS 스마트홈</span>
+                </div>
+              </div>
+              <a class="sfp-cta" href="#register">상담 예약하기</a>
+            </div>
+          </div>
+          <!-- 84B -->
+          <div class="sfp-panel" data-fppanel="1">
+            <div class="sfp-img"><img src="https://placehold.co/800x600/1a1a1a/666?text=84B+%ED%8F%89%EB%A9%B4%EB%8F%84" alt="84B 평면도" loading="lazy"></div>
+            <div class="sfp-info">
+              <h3>84B타입<span class="pyeong">(37평)</span></h3>
+              <p class="sfp-desc"><strong>최다 세대</strong> 196세대의 대표 평형. <strong>판상형 4Bay</strong> 구조로 채광·통풍 우수, 합리적 가격대의 실속형 평면.</p>
+              <div class="sfp-specs">
+                <div class="sfp-spec"><span>전용면적</span><b>84.86㎡ (25.67평)</b></div>
+                <div class="sfp-spec"><span>공급면적</span><b>109.77㎡ (33.21평)</b></div>
+                <div class="sfp-spec"><span>서비스면적</span><b>32.71㎡ (9.89평)</b></div>
+                <div class="sfp-spec"><span>공급 세대</span><b><em>196</em> 세대</b></div>
+              </div>
+              <div class="sfp-features">
+                <span class="sfp-feat-label">특장점</span>
+                <div class="sfp-feat-list">
+                  <span class="sfp-feat">4Bay 판상형</span>
+                  <span class="sfp-feat">최다 세대</span>
+                  <span class="sfp-feat">실속형 평면</span>
+                </div>
+              </div>
+              <a class="sfp-cta" href="#register">상담 예약하기</a>
+            </div>
+          </div>
+          <!-- 84C -->
+          <div class="sfp-panel" data-fppanel="2">
+            <div class="sfp-img"><img src="https://placehold.co/800x600/1a1a1a/666?text=84C+%ED%8F%89%EB%A9%B4%EB%8F%84" alt="84C 평면도" loading="lazy"></div>
+            <div class="sfp-info">
+              <h3>84C타입<span class="pyeong">(39평)</span></h3>
+              <p class="sfp-desc"><strong>넓은 서비스면적</strong> 45㎡(13.64평)으로 여유로운 공간 활용. 판상형 4Bay에 <strong>39평대</strong>의 넉넉한 실사용 면적.</p>
+              <div class="sfp-specs">
+                <div class="sfp-spec"><span>전용면적</span><b>84.99㎡ (25.71평)</b></div>
+                <div class="sfp-spec"><span>공급면적</span><b>110.46㎡ (33.42평)</b></div>
+                <div class="sfp-spec"><span>서비스면적</span><b>45.08㎡ (13.64평)</b></div>
+                <div class="sfp-spec"><span>공급 세대</span><b><em>39</em> 세대</b></div>
+              </div>
+              <div class="sfp-features">
+                <span class="sfp-feat-label">특장점</span>
+                <div class="sfp-feat-list">
+                  <span class="sfp-feat">4Bay 판상형</span>
+                  <span class="sfp-feat">넓은 서비스면적</span>
+                  <span class="sfp-feat">39평대 실사용</span>
+                </div>
+              </div>
+              <a class="sfp-cta" href="#register">상담 예약하기</a>
+            </div>
+          </div>
+          <!-- 84D -->
+          <div class="sfp-panel" data-fppanel="3">
+            <div class="sfp-img"><img src="https://placehold.co/800x600/1a1a1a/666?text=84D+%ED%8F%89%EB%A9%B4%EB%8F%84" alt="84D 평면도" loading="lazy"></div>
+            <div class="sfp-info">
+              <h3>84D타입<span class="pyeong">(37평)</span></h3>
+              <p class="sfp-desc"><strong>판상형 4Bay</strong> 설계의 특화 평면. 합리적 구조에 <strong>넉넉한 서비스면적</strong>(38㎡)으로 공간 활용도 극대화.</p>
+              <div class="sfp-specs">
+                <div class="sfp-spec"><span>전용면적</span><b>84.96㎡ (25.70평)</b></div>
+                <div class="sfp-spec"><span>공급면적</span><b>110.05㎡ (33.29평)</b></div>
+                <div class="sfp-spec"><span>서비스면적</span><b>38.35㎡ (11.60평)</b></div>
+                <div class="sfp-spec"><span>공급 세대</span><b><em>76</em> 세대</b></div>
+              </div>
+              <div class="sfp-features">
+                <span class="sfp-feat-label">특장점</span>
+                <div class="sfp-feat-list">
+                  <span class="sfp-feat">4Bay 판상형</span>
+                  <span class="sfp-feat">특화 평면</span>
+                  <span class="sfp-feat">넓은 서비스면적</span>
+                </div>
+              </div>
+              <a class="sfp-cta" href="#register">상담 예약하기</a>
+            </div>
+          </div>
+          <!-- 89A -->
+          <div class="sfp-panel" data-fppanel="4">
+            <div class="sfp-img"><img src="https://placehold.co/800x600/1a1a1a/666?text=89A+%ED%8F%89%EB%A9%B4%EB%8F%84" alt="89A 평면도" loading="lazy"></div>
+            <div class="sfp-info">
+              <h3>89A타입<span class="pyeong">(38평)</span></h3>
+              <p class="sfp-desc"><strong>89㎡ 대형 평형</strong>의 여유로운 공간. 전용 89.51㎡에 <strong>판상형 4Bay</strong> 구조로 프리미엄 주거 환경 제공.</p>
+              <div class="sfp-specs">
+                <div class="sfp-spec"><span>전용면적</span><b>89.51㎡ (27.08평)</b></div>
+                <div class="sfp-spec"><span>공급면적</span><b>116.42㎡ (35.22평)</b></div>
+                <div class="sfp-spec"><span>서비스면적</span><b>38.49㎡ (11.64평)</b></div>
+                <div class="sfp-spec"><span>공급 세대</span><b><em>60</em> 세대</b></div>
+              </div>
+              <div class="sfp-features">
+                <span class="sfp-feat-label">특장점</span>
+                <div class="sfp-feat-list">
+                  <span class="sfp-feat">4Bay 판상형</span>
+                  <span class="sfp-feat">89㎡ 대형</span>
+                  <span class="sfp-feat">프리미엄 설계</span>
+                </div>
+              </div>
+              <a class="sfp-cta" href="#register">상담 예약하기</a>
+            </div>
+          </div>
+          <!-- 89C -->
+          <div class="sfp-panel" data-fppanel="5">
+            <div class="sfp-img"><img src="https://placehold.co/800x600/1a1a1a/666?text=89C+%ED%8F%89%EB%A9%B4%EB%8F%84" alt="89C 평면도" loading="lazy"></div>
+            <div class="sfp-info">
+              <h3>89C타입<span class="pyeong">(40평)</span></h3>
+              <p class="sfp-desc"><strong>최대 서비스면적</strong> 45㎡(13.64평)에 전용 89㎡의 <strong>40평대 최대형</strong>. 넉넉한 공간의 프리미엄 라이프.</p>
+              <div class="sfp-specs">
+                <div class="sfp-spec"><span>전용면적</span><b>89.52㎡ (27.08평)</b></div>
+                <div class="sfp-spec"><span>공급면적</span><b>115.95㎡ (35.07평)</b></div>
+                <div class="sfp-spec"><span>서비스면적</span><b>45.08㎡ (13.64평)</b></div>
+                <div class="sfp-spec"><span>공급 세대</span><b><em>39</em> 세대</b></div>
+              </div>
+              <div class="sfp-features">
+                <span class="sfp-feat-label">특장점</span>
+                <div class="sfp-feat-list">
+                  <span class="sfp-feat">4Bay 판상형</span>
+                  <span class="sfp-feat">40평대 최대형</span>
+                  <span class="sfp-feat">최대 서비스면적</span>
+                </div>
+              </div>
+              <a class="sfp-cta" href="#register">상담 예약하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ UPDATES — Dark image cards ═══ -->
+    <section class="section updates">
+      <div class="updates__header">
+        <div class="section__label">
+          <span>입지 환경</span>
+          <svg class="label-star" width="14" height="14" viewBox="0 0 14 14"><path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5Z" fill="currentColor"/></svg>
+        </div>
+      </div>
+      <div class="updates__cards">
+        <a href="#" class="update-card">
+          <div class="update-card__img">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop" alt="">
+            <span class="update-card__tag">교통</span>
+          </div>
+          <p class="update-card__text"><strong>광주송정역 · 광주공항 인접</strong> <span>— 무안고속도로 서광산IC · 본덕IC, 광역 교통 환경 우수</span></p>
+        </a>
+        <a href="#" class="update-card">
+          <div class="update-card__img">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop" alt="">
+            <span class="update-card__tag">교육</span>
+          </div>
+          <p class="update-card__text"><strong>동곡초 바로 옆 (그린스마트스쿨)</strong> <span>— 평동중 · 공광중 · 선운중 · 보문고 등 우수 학군 인접</span></p>
+        </a>
+        <a href="#" class="update-card">
+          <div class="update-card__img">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="">
+            <span class="update-card__tag">생활</span>
+          </div>
+          <p class="update-card__text"><strong>하나로마트 도보권 · 송정역 상권</strong> <span>— 동곡동 행정복지센터, 승촌보 캠핑장 · 승촌공원 · 수변공원 인접</span></p>
+        </a>
+        <a href="#" class="update-card">
+          <div class="update-card__img">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop" alt="">
+            <span class="update-card__tag">미래가치</span>
+          </div>
+          <p class="update-card__text"><strong>미래차 국가산단 · 빛그린산단</strong> <span>— 주변 2,500여 업체 45,000여명 근무, 스마트타운 2천여 세대 대단지 개발</span></p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══ REGISTER FORM ═══ -->
+    <section class="section register" id="register">
+      <div class="section__label">
+        <span>관심고객 등록</span>
+        <svg class="label-star" width="14" height="14" viewBox="0 0 14 14"><path d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5Z" fill="currentColor"/></svg>
+      </div>
+      <p class="register__sub">계약금 1,500만원 · 발코니 확장 무상 · 중도금 무이자 · 에어컨 4대 · 현관 중문 무상제공 등 특별 혜택 상세 안내를 받으실 수 있습니다.</p>
+      <form class="register__form" id="register-form">
+        <div class="form-row">
+          <div class="form-field"><label>이름</label><input type="text" id="name" placeholder="홍길동" required></div>
+          <div class="form-field"><label>연락처</label><input type="tel" id="phone" placeholder="010-0000-0000" required></div>
+        </div>
+        <div class="form-field"><label>문의내용</label><textarea id="message" placeholder="관심 타입, 문의사항 등을 입력해주세요"></textarea></div>
+        <button type="submit" class="form-submit"><span>등록하기</span><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 15L15 3M15 3H5M15 3V13" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      </form>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer">
+      <div class="footer__links">
+        <div class="footer__col">
+          <a href="#">Instagram</a>
+          <a href="#">카카오채널</a>
+        </div>
+        <div class="footer__col">
+          <a href="#">단지안내</a>
+          <a href="#">평형안내</a>
+          <a href="#">입지환경</a>
+          <a href="#register">관심고객 등록</a>
+        </div>
+        <div class="footer__col">
+          <span>분양문의 문의 요망</span>
+        </div>
+        <div class="footer__col">
+          <span>한양립스 2025</span>
+        </div>
+      </div>
+      <div class="footer__big" id="back-top">
+        <span class="footer__big-text">PREMIUM LIVING</span>
+        <svg class="footer__arrow" width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M16 64L64 16M64 16H16M64 16V64" stroke="currentColor" stroke-width="4"/></svg>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Floating CTA -->
+  <a href="#register" class="floating-cta" id="floating-cta">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17 3L9 11M17 3H11M17 3V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 11V15C17 16.1 16.1 17 15 17H5C3.9 17 3 16.1 3 15V5C3 3.9 3.9 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>관심고객 등록</span>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
