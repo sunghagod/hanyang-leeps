@@ -74,7 +74,7 @@ ul{list-style:none}
 .hero__title{font-size:160px;font-weight:800;line-height:.9;letter-spacing:-.01em;text-transform:uppercase;color:var(--white)}
 
 /* Hero tel */
-.hero-tel{position:relative;z-index:10;display:inline-flex;align-items:center;gap:10px;margin-left:var(--pad);color:#FEE500;font-size:clamp(22px,2vw,32px);font-weight:800;letter-spacing:.02em;text-decoration:none;text-shadow:0 2px 12px rgba(0,0,0,.6);transition:opacity .3s}
+.hero-tel{display:inline-flex;align-items:center;gap:10px;margin-top:12px;color:var(--white);font-size:clamp(20px,1.8vw,28px);font-weight:700;letter-spacing:.02em;text-decoration:none;text-shadow:0 2px 12px rgba(0,0,0,.6);transition:opacity .3s}
 .hero-tel:hover{opacity:.75}
 .hero-tel svg{flex-shrink:0}
 
@@ -430,7 +430,7 @@ ul{list-style:none}
   .floating-cta--kakao{box-shadow:0 4px 20px rgba(254,229,0,.4)}
   .floating-cta--tel{box-shadow:0 4px 20px rgba(0,0,0,.5)}
   .hd-tel span{display:none}
-  .hero-tel{font-size:20px;margin-left:var(--pad)}
+  .hero-tel{font-size:18px;margin-top:10px}
   .register__contacts{flex-direction:column}
   .register__contact-card:first-child{border-right:none;padding-right:0}
   .register__contact-card:last-child{padding-left:0}
