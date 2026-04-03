@@ -1,57 +1,58 @@
-/* ── Form → Google Sheets 연동 (보안 강화) ── */
+/* ── Form → Google Sheets 연동 (Security 모듈 연동) ── */
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('register-form');
   if (!form) return;
 
   var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2fwwxWFoOfyBWHiHbUJrmh0HHLHxLyw2QNfYHBhJex8B3V6x0VcZkQmAbkqicVnts/exec';
-  var lastSubmit = 0;
 
-  function sanitize(str) {
-    return str.replace(/[<>"'&]/g, function (c) {
-      return { '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '&': '&amp;' }[c];
-    }).trim();
-  }
-
-  function isValidPhone(p) {
-    return /^01[0-9]-?\d{3,4}-?\d{4}$/.test(p.replace(/\s/g, ''));
-  }
-
-  function isValidName(n) {
-    return n.length >= 2 && n.length <= 20 && /^[가-힣a-zA-Z\s]+$/.test(n);
-  }
+  // 허니팟 삽입
+  var S = window.Security;
+  if (S && S.honeypot) S.honeypot.inject(form);
+  if (S && S.timing) S.timing.markLoaded();
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
     var n = document.getElementById('name');
     var p = document.getElementById('phone');
     var m = document.getElementById('message');
     var btn = form.querySelector('.form-submit');
     var span = btn && btn.querySelector('span');
 
-    var nameVal = sanitize(n.value);
-    var phoneVal = p.value.replace(/\s/g, '');
-    var msgVal = sanitize(m.value).substring(0, 500);
+    // 허니팟 봇 차단
+    if (S && S.honeypot && S.honeypot.isFilled(form)) return;
 
-    if (!nameVal || !phoneVal) {
-      alert('이름과 연락처를 입력해주세요.');
-      return;
-    }
-    if (!isValidName(nameVal)) {
-      alert('이름을 정확히 입력해주세요 (한글/영문 2~20자).');
-      return;
-    }
-    if (!isValidPhone(phoneVal)) {
-      alert('연락처를 정확히 입력해주세요 (예: 010-1234-5678).');
-      return;
-    }
-
-    // Rate limit: 10초
-    var now = Date.now();
-    if (now - lastSubmit < 10000) {
+    // 타이밍 봇 차단
+    if (S && S.timing && S.timing.isTooFast()) {
       alert('잠시 후 다시 시도해주세요.');
       return;
     }
-    lastSubmit = now;
+
+    // 입력값 검증
+    if (S && S.validate) {
+      var nameR = S.validate.name(n.value);
+      if (!nameR.valid) { alert(nameR.msg); n.focus(); return; }
+      var phoneR = S.validate.phone(p.value);
+      if (!phoneR.valid) { alert(phoneR.msg); p.focus(); return; }
+      var msgR = S.validate.message(m.value);
+      if (!msgR.valid) { alert(msgR.msg); m.focus(); return; }
+      var nameVal = nameR.value;
+      var phoneVal = phoneR.value;
+      var msgVal = msgR.value;
+    } else {
+      if (!n.value.trim() || !p.value.trim()) { alert('이름과 연락처를 입력해주세요.'); return; }
+      var nameVal = n.value.trim();
+      var phoneVal = p.value.trim();
+      var msgVal = (m.value || '').trim().substring(0, 500);
+    }
+
+    // 레이트 리미팅 (60초에 3회)
+    if (S && S.rateLimit) {
+      if (!S.rateLimit('form_submit', 60000, 3)) {
+        alert('잠시 후 다시 시도해주세요. (1분에 3회 제한)');
+        return;
+      }
+    }
 
     if (span) span.textContent = '전송 중...';
     if (btn) btn.disabled = true;
@@ -60,15 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: nameVal,
-        phone: phoneVal,
-        message: msgVal
-      })
+      body: JSON.stringify({ name: nameVal, phone: phoneVal, message: msgVal })
     }).then(function () {
       if (span) span.textContent = '등록 완료!';
-      if (btn) btn.style.background = '#4a8c3f';
-      if (btn) btn.style.color = '#fff';
+      if (btn) { btn.style.background = '#4a8c3f'; btn.style.color = '#fff'; }
       setTimeout(function () {
         if (span) span.textContent = '등록하기';
         if (btn) { btn.style.background = ''; btn.style.color = ''; btn.disabled = false; }
