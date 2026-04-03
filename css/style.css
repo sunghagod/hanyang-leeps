@@ -313,6 +313,17 @@ ul{list-style:none}
 .form-submit svg{transition:transform .3s var(--ease)}
 .form-submit:hover svg{transform:translate(3px,-3px)}
 
+/* ═══ INTRO 데스크탑 중앙정렬 ═══ */
+@media(min-width:769px){
+  .intro{text-align:center}
+  .intro__tags{grid-template-columns:repeat(4,auto);justify-content:center;max-width:900px;margin-left:auto;margin-right:auto}
+  .intro__tag{font-size:clamp(14px,1vw,16px);padding:12px 28px;font-weight:600}
+  .intro__stats{justify-content:center}
+  .intro__ctas{justify-content:center}
+  .intro__headline-main{font-size:clamp(40px,4.5vw,64px)}
+  .intro__headline{font-size:clamp(28px,3.5vw,50px)}
+}
+
 /* ═══ FOOTER — 사업정보 ═══ */
 .footer{position:relative;z-index:1;background:var(--dark);color:rgba(255,255,255,.55);padding:clamp(40px,5vw,60px) var(--pad) 0;border-top:1px solid rgba(255,255,255,.1)}
 .footer__info{padding-bottom:clamp(24px,3vw,40px);border-bottom:1px solid rgba(255,255,255,.1)}
