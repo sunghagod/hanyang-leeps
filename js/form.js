@@ -1,9 +1,24 @@
-/* ── Form → Google Sheets 연동 ── */
+/* ── Form → Google Sheets 연동 (보안 강화) ── */
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('register-form');
   if (!form) return;
 
   var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby2fwwxWFoOfyBWHiHbUJrmh0HHLHxLyw2QNfYHBhJex8B3V6x0VcZkQmAbkqicVnts/exec';
+  var lastSubmit = 0;
+
+  function sanitize(str) {
+    return str.replace(/[<>"'&]/g, function (c) {
+      return { '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '&': '&amp;' }[c];
+    }).trim();
+  }
+
+  function isValidPhone(p) {
+    return /^01[0-9]-?\d{3,4}-?\d{4}$/.test(p.replace(/\s/g, ''));
+  }
+
+  function isValidName(n) {
+    return n.length >= 2 && n.length <= 20 && /^[가-힣a-zA-Z\s]+$/.test(n);
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -13,10 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
     var btn = form.querySelector('.form-submit');
     var span = btn && btn.querySelector('span');
 
-    if (!n.value.trim() || !p.value.trim()) {
+    var nameVal = sanitize(n.value);
+    var phoneVal = p.value.replace(/\s/g, '');
+    var msgVal = sanitize(m.value).substring(0, 500);
+
+    if (!nameVal || !phoneVal) {
       alert('이름과 연락처를 입력해주세요.');
       return;
     }
+    if (!isValidName(nameVal)) {
+      alert('이름을 정확히 입력해주세요 (한글/영문 2~20자).');
+      return;
+    }
+    if (!isValidPhone(phoneVal)) {
+      alert('연락처를 정확히 입력해주세요 (예: 010-1234-5678).');
+      return;
+    }
+
+    // Rate limit: 10초
+    var now = Date.now();
+    if (now - lastSubmit < 10000) {
+      alert('잠시 후 다시 시도해주세요.');
+      return;
+    }
+    lastSubmit = now;
 
     if (span) span.textContent = '전송 중...';
     if (btn) btn.disabled = true;
@@ -26,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: n.value,
-        phone: p.value,
-        message: m.value
+        name: nameVal,
+        phone: phoneVal,
+        message: msgVal
       })
     }).then(function () {
       if (span) span.textContent = '등록 완료!';
