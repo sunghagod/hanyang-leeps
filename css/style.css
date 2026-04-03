@@ -52,11 +52,11 @@ ul{list-style:none}
 .header__logo-img{height:clamp(28px,3vw,48px);width:auto;filter:brightness(0) invert(1)}
 .header__right{display:flex;align-items:center;gap:14px}
 .header__menu{font-size:clamp(11px,.9vw,14px);font-weight:500;color:var(--white);letter-spacing:.02em;cursor:pointer}
-.hd-tel{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#4a8c3f;transition:opacity .3s}
+.hd-tel{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--white);transition:opacity .3s}
 .hd-tel:hover{opacity:.75}
 .hd-tel svg{flex-shrink:0}
-.hd-kakao{display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:rgba(74,140,63,.15);border:1px solid rgba(74,140,63,.35);border-radius:50%;color:#4a8c3f;transition:all .3s}
-.hd-kakao:hover{background:#4a8c3f;color:var(--white)}
+.hd-kakao{display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#FEE500;border-radius:50%;color:#3B1E1E;transition:all .3s}
+.hd-kakao:hover{background:#F5DC00;}
 
 /* Hero marquee */
 .hero__marquee{position:relative;z-index:10;overflow:hidden;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15)}
@@ -74,7 +74,7 @@ ul{list-style:none}
 .hero__title{font-size:160px;font-weight:800;line-height:.9;letter-spacing:-.01em;text-transform:uppercase;color:var(--white)}
 
 /* Hero tel */
-.hero-tel{position:relative;z-index:10;display:inline-flex;align-items:center;gap:10px;margin-left:var(--pad);color:#4a8c3f;font-size:clamp(18px,1.6vw,24px);font-weight:700;letter-spacing:.02em;text-decoration:none;text-shadow:0 2px 12px rgba(0,0,0,.5);transition:opacity .3s}
+.hero-tel{position:relative;z-index:10;display:inline-flex;align-items:center;gap:10px;margin-left:var(--pad);color:#FEE500;font-size:clamp(22px,2vw,32px);font-weight:800;letter-spacing:.02em;text-decoration:none;text-shadow:0 2px 12px rgba(0,0,0,.6);transition:opacity .3s}
 .hero-tel:hover{opacity:.75}
 .hero-tel svg{flex-shrink:0}
 
@@ -430,7 +430,7 @@ ul{list-style:none}
   .floating-cta--kakao{box-shadow:0 4px 20px rgba(254,229,0,.4)}
   .floating-cta--tel{box-shadow:0 4px 20px rgba(0,0,0,.5)}
   .hd-tel span{display:none}
-  .hero-tel{font-size:16px;margin-left:var(--pad)}
+  .hero-tel{font-size:20px;margin-left:var(--pad)}
   .register__contacts{flex-direction:column}
   .register__contact-card:first-child{border-right:none;padding-right:0}
   .register__contact-card:last-child{padding-left:0}
