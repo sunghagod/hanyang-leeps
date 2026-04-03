@@ -65,7 +65,7 @@ ul{list-style:none}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-33.333%)}}
 
 /* Hero title wrap */
-.hero__title-wrap{position:relative;z-index:10;margin:auto var(--pad)}
+.hero__title-wrap{position:relative;z-index:10;margin:auto var(--pad) clamp(40px,5vw,80px)}
 .hero__brand{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:16px}
 .hero__brand-logo{height:clamp(75px,8.7vw,125px);width:auto;filter:brightness(0) invert(1)}
 .hero__brand-name{font-size:clamp(20px,2.5vw,40px);font-weight:700;color:var(--white);letter-spacing:-.01em}
