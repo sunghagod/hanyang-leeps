@@ -71,8 +71,8 @@
     var cta = document.getElementById('floating-cta');
     if (!cta) return;
     window.addEventListener('scroll', function () {
-      if (window.scrollY > 400) cta.classList.add('visible');
-      else cta.classList.remove('visible');
+      if (window.scrollY > 400) { cta.classList.add('visible'); }
+      else { cta.classList.remove('visible'); }
     });
   }
 
