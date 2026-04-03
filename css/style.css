@@ -184,7 +184,8 @@ ul{list-style:none}
 
 .promo__sub{font-size:clamp(16px,1.4vw,22px);font-weight:600;color:var(--gray);margin-bottom:clamp(36px,5vw,64px);letter-spacing:-.01em}
 
-.promo__cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,24px);margin-bottom:clamp(32px,4vw,56px)}
+.promo__cards{display:flex;justify-content:center;gap:clamp(12px,1.5vw,24px);margin-bottom:clamp(32px,4vw,56px)}
+.promo-card{min-width:clamp(320px,40vw,560px)}
 .promo-card{background:var(--white);border:2.5px solid var(--dark);border-radius:12px;padding:clamp(28px,3vw,48px) clamp(20px,2.5vw,36px);transition:border-color .3s var(--ease),transform .3s var(--ease)}
 .promo-card:hover{border-color:var(--dark);transform:translateY(-2px)}
 .promo-card__label{display:block;font-size:clamp(16px,1.2vw,20px);font-weight:800;letter-spacing:.04em;color:var(--dark);margin-bottom:clamp(12px,1.2vw,20px)}
@@ -430,7 +431,8 @@ ul{list-style:none}
   .sfp-modal-content .sfp-cta-wrap{display:flex!important;gap:8px}
   .sfp-modal-content .sfp-cta{display:flex!important;padding:15px;font-size:14px;text-align:center}
   .updates__cards{grid-template-columns:1fr 1fr}
-  .promo__cards{grid-template-columns:1fr}
+  .promo__cards{flex-direction:column}
+  .promo-card{min-width:unset}
   .promo__checklist{max-width:100%}
   .floating-cta-group{bottom:20px;right:14px;gap:12px;align-items:flex-end}
   .floating-cta{font-size:0;padding:0;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.35)}
