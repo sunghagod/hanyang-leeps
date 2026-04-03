@@ -64,10 +64,7 @@
     window.dispatchEvent(new Event('loaderDone'));
   }
 
-  var bt = document.getElementById('back-top');
-  if (bt) bt.addEventListener('click', function () {
-    if (lenis) lenis.scrollTo(0, { duration: 2 }); else window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  // back-top removed (footer redesigned)
 
   // Floating CTA visibility on scroll
   function initFloatingCta() {
