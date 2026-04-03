@@ -321,7 +321,7 @@ ul{list-style:none}
   .updates__hero-stat strong{font-size:clamp(36px,4vw,60px)}
   .update-card__img{aspect-ratio:16/9;max-height:none}
   .updates__cards{grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,28px)}
-  .update-card__text{font-size:35px}
+  .update-card__text{font-size:30px;font-weight:700}
 }
 
 /* ═══ INTRO 데스크탑 중앙정렬 ═══ */
