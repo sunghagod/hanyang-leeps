@@ -314,6 +314,16 @@ ul{list-style:none}
 .form-submit svg{transition:transform .3s var(--ease)}
 .form-submit:hover svg{transform:translate(3px,-3px)}
 
+/* ═══ 입지환경 데스크탑 ═══ */
+@media(min-width:769px){
+  .updates__hero{padding:clamp(40px,4vw,64px) clamp(40px,5vw,80px)}
+  .updates__hero-title{font-size:clamp(32px,3.5vw,52px)}
+  .updates__hero-stat strong{font-size:clamp(36px,4vw,60px)}
+  .update-card__img{aspect-ratio:4/2.2;max-height:160px}
+  .updates__cards{grid-template-columns:repeat(4,1fr);gap:16px}
+  .update-card__text{font-size:12px}
+}
+
 /* ═══ INTRO 데스크탑 중앙정렬 ═══ */
 @media(min-width:769px){
   .intro{text-align:center}
