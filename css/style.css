@@ -66,7 +66,8 @@ ul{list-style:none}
 
 /* Hero title wrap */
 .hero__title-wrap{position:relative;z-index:10;margin:auto var(--pad) clamp(40px,5vw,80px)}
-.hero__brand{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:16px}
+.hero__brand{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:24px}
+.hero__catchcopy{margin-bottom:12px;font-size:clamp(16px,2vw,24px);font-weight:700;color:#d4a853;letter-spacing:.08em;text-shadow:0 2px 12px rgba(0,0,0,.6)}
 .hero__brand-logo{height:clamp(75px,8.7vw,125px);width:auto;filter:brightness(0) invert(1)}
 .hero__brand-name{font-size:clamp(20px,2.5vw,40px);font-weight:700;color:var(--white);letter-spacing:-.01em}
 
@@ -77,6 +78,7 @@ ul{list-style:none}
 .hero-tel{display:inline-flex;align-items:center;gap:10px;margin-top:12px;color:var(--white);font-size:clamp(20px,1.8vw,28px);font-weight:700;letter-spacing:.02em;text-decoration:none;text-shadow:0 2px 12px rgba(0,0,0,.6);transition:opacity .3s}
 .hero-tel:hover{opacity:.75}
 .hero-tel svg{flex-shrink:0}
+.hero-sale-type{margin-top:8px;color:var(--white);font-size:clamp(20px,1.8vw,28px);font-weight:700;letter-spacing:.15em;text-shadow:0 2px 12px rgba(0,0,0,.6);opacity:.85}
 
 /* Hero bottom */
 .hero__bottom{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:flex-end;padding:20px var(--pad)}
@@ -340,6 +342,7 @@ ul{list-style:none}
 .footer__info{padding-bottom:clamp(24px,3vw,40px);border-bottom:1px solid rgba(255,255,255,.1)}
 .footer__info p{font-size:clamp(12px,.85vw,14px);line-height:1.8;font-weight:400}
 .footer__disclaimer{color:rgba(255,255,255,.35);font-size:clamp(11px,.75vw,12px)}
+.footer__web-inquiry{font-size:clamp(14px,1.2vw,18px);font-weight:700;color:rgba(255,255,255,.55);margin-bottom:16px}
 .footer__bottom{display:flex;justify-content:space-between;align-items:center;padding:clamp(16px,2vw,24px) 0;font-size:clamp(11px,.75vw,12px);color:rgba(255,255,255,.3)}
 
 /* ═══ Floating CTA Group ═══ */
@@ -410,6 +413,7 @@ ul{list-style:none}
   :root{--pad:20px}
   .hero__title{font-size:60px}
   .hero__brand-logo{height:40px}
+  .hero__catchcopy{font-size:14px;margin-bottom:8px}
   .hero__title-wrap{margin:auto var(--pad) 80px}
   .intro__stats{flex-wrap:wrap;gap:16px}
   .intro__stat{width:calc(33.33% - 12px)}
